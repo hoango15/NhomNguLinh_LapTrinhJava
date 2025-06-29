@@ -12,6 +12,7 @@ import LabResultList from "./components/LabResult/LabResultList"
 import Layout from "./components/Layout/Layout"
 import ProtectedRoute from "./components/Auth/ProtectedRoute"
 import "./App.css"
+import Register from "./components/Auth/Register"
 
 function App() {
   const { user, loading } = useAuth()
@@ -28,6 +29,8 @@ function App() {
     <div className="App">
       <Routes>
       <Route path="/" element={<HomePage />} />
+            <Route path="/register" element={<Register />} />
+
         <Route path="/login" element={user ? <Navigate to="/dashboard" /> : <Login />} />
         <Route path="/" element={user ? <Navigate to="/dashboard" /> : <Navigate to="/login" />} />
         <Route

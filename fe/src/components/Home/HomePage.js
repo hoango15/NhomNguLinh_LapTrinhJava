@@ -17,7 +17,10 @@ const Homepage = () => {
 
   const fetchHomepageData = async () => {
     try {
-      const [contentRes, statsRes] = await Promise.all([educationalContentAPI.getPublished(), dashboardAPI.getStats()])
+      const [contentRes, statsRes] = await Promise.all([
+        educationalContentAPI.getPublished(),
+        dashboardAPI.getStats(),
+      ])
       setFeaturedContent(contentRes.data.slice(0, 6))
       setStats(statsRes.data)
     } catch (error) {
@@ -41,6 +44,34 @@ const Homepage = () => {
 
   return (
     <div className="homepage">
+      
+      {/* Thanh Nav ngang */}
+     <nav className="homepage-navbar">
+  <div className="navbar-content">
+    <div className="navbar-logo" onClick={() => (window.location.href = "/")}>
+      HIVCare
+    </div>
+    <div className="navbar-links">
+      <button onClick={() => window.location.href = "/"}>Trang chủ</button>
+      <button onClick={() => window.location.href = "/appointments"}>Đặt lịch khám</button>
+      <button onClick={() => window.location.href = "/education"}>Giáo dục</button>
+
+      {!user ? (
+        <>
+          <button onClick={() => window.location.href = "/login"}>Đăng nhập</button>
+          <button onClick={() => window.location.href = "/register"}>Đăng ký</button>
+        </>
+      ) : (
+        <div className="navbar-user">
+          <span className="user-name">👤 {user.name || user.email}</span>
+          <button onClick={() => window.location.href = "/dashboard"}>Trang chính</button>
+        </div>
+      )}
+    </div>
+  </div>
+</nav>
+
+
     
       <section className="hero-section">
         <div className="hero-content">
@@ -68,7 +99,6 @@ const Homepage = () => {
         </div>
       </section>
 
-    
       {stats && (
         <section className="stats-section">
           <div className="container">

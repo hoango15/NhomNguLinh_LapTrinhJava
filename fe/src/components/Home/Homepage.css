@@ -2,6 +2,46 @@
   min-height: 100vh;
 }
 
+.homepage-navbar {
+  background: white;
+  padding: 15px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #667eea;
+  cursor: pointer;
+}
+
+.navbar-links button {
+  background: none;
+  border: none;
+  margin-left: 20px;
+  font-size: 1rem;
+  color: #2c3e50;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.navbar-links button:hover {
+  color: #667eea;
+}
+
+
 .hero-section {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
@@ -147,6 +187,7 @@
   font-size: 3rem;
   margin-bottom: 20px;
 }
+
 
 .service-card h3 {
   font-size: 1.5rem;

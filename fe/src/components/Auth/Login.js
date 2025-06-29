@@ -108,10 +108,10 @@ const Login = () => {
         </div>
 
         <p className="mt-3 text-center">
-          Chưa có tài khoản? <Link to="../register">Đăng ký</Link>
+          Chưa có tài khoản? <Link to="/Register">Đăng ký</Link>
         </p>
         <p className="mt-2 text-center">
-  <Link to="../homepage">← Trở về trang chủ</Link>
+<Link to="/">← Trở về trang chủ</Link>
 </p>
 
       </div>
