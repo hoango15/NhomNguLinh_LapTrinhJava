@@ -162,4 +162,3 @@ public class PatientService {
         return Period.between(dob, LocalDate.now()).getYears();
     }
 }
-s
